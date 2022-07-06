@@ -67,6 +67,6 @@ for line in script:
         if line1 == "btn_a":
             print("if(input.buttonIsPressed(Button.A)) {")
         elif line1 == "btn_b":
-            print("if(input.buttonIsPressed(Button.b)) {")
+            print("if(input.buttonIsPressed(Button.B)) {")
         else:
             print("if ("+line1+line2.strip()+line.strip().split("::")[3]+"){")
