@@ -70,3 +70,8 @@ for line in script:
             print("if(input.buttonIsPressed(Button.B)) {")
         else:
             print("if ("+line1+line2.strip()+line.strip().split("::")[3]+"){")
+
+    elif line.strip().startswith(";;"):
+        line = line.split(';;')[1]
+        print(line)
+
