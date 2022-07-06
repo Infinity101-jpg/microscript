@@ -15,7 +15,13 @@ function _printf(val: string) {
     }
 }
 
-function printresp(val: string) {
+
+function printresp(val: any) {
+    val = val + "";
+    _printresp(val)
+}
+
+function _printresp(val: string) {
     for (let i of val) {
         basic.showString(i, 20)
     }
