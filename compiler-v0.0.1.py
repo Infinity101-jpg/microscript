@@ -1,5 +1,4 @@
 
-
 print("""
 
 function printf(val: any) {
@@ -16,6 +15,12 @@ function _printf(val: string) {
     }
 }
 
+function printresp(val: string) {
+    for (let i of val) {
+        basic.showString(i, 20)
+    }
+}
+
 
 """)
 
@@ -26,6 +31,9 @@ for line in script:
     if line.strip().startswith("printf"):
         line = line.split("::")[1]
         print("printf("+str(line).strip()+")")
+    elif line.strip().startswith("printresp"):
+        line = line.split("::")[1]
+        print("printresp("+str(line).strip()+")")
     elif line.strip().startswith("loop"):
         line = line.split("::")[1]
         print("for(let _val = 0;_val < "+str(line).strip()+";_val++){let loop_index = _val")
