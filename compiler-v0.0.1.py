@@ -1,4 +1,5 @@
 
+
 print("""
 
 function printf(val: any) {
@@ -8,12 +9,13 @@ function printf(val: any) {
 
 function _printf(val: string) {
     for (let i of val) {
-        basic.showString(i, 40)
+        basic.showString(i, 20)
+        basic.showString(i, 20)
         basic.clearScreen()
-        basic.pause(30)
+        
     }
-    basic.pause(240)
 }
+
 
 """)
 
@@ -39,5 +41,18 @@ for line in script:
     elif line.strip().startswith("if::btn_b"):
         print("if(input.buttonIsPressed(Button.B)) {")
 
+    elif line.strip().startswith("new"):
+        line = line.split("::")
+        line1 = line[1]
+        line2 = line[2].strip()
+        
+        print("let " + line1 + ' = ' + line2)
+
+    elif line.strip().startswith("change"):
+        line = line.split("::")
+        line1 = line[1]
+        line2 = line[2].strip()
+        
+        print("" + line1 + ' = ' + line2)
 
 
