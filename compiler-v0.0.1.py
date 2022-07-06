@@ -1,11 +1,8 @@
-
 print("""
-
 function printf(val: any) {
     val = val + ""
     _printf(val)
 }
-
 function _printf(val: string) {
     for (let i of val) {
         basic.showString(i, 20)
@@ -14,20 +11,15 @@ function _printf(val: string) {
         
     }
 }
-
-
 function printresp(val: any) {
     val = val + "";
     _printresp(val)
 }
-
 function _printresp(val: string) {
     for (let i of val) {
         basic.showString(i, 20)
     }
 }
-
-
 """)
 
 with open("script.js", "r") as script:
@@ -49,11 +41,7 @@ for line in script:
     elif line.strip().startswith("forever"):
         print("while (true){")
 
-    elif line.strip().startswith("if::btn_a"):
-        print("if(input.buttonIsPressed(Button.A)) {")
 
-    elif line.strip().startswith("if::btn_b"):
-        print("if(input.buttonIsPressed(Button.B)) {")
 
     elif line.strip().startswith("new"):
         line = line.split("::")
@@ -69,4 +57,16 @@ for line in script:
         
         print("" + line1 + ' = ' + line2)
 
-
+    elif line.strip().startswith("if"):
+        try:
+            linen = line.split("::")
+            line1 = linen[1].strip()
+            line2 = linen[2].strip()
+        except:
+            pass;
+        if line1 == "btn_a":
+            print("if(input.buttonIsPressed(Button.A)) {")
+        elif line1 == "btn_b":
+            print("if(input.buttonIsPressed(Button.b)) {")
+        else:
+            print("if ("+line1+line2.strip()+line.strip().split("::")[3]+"){")
