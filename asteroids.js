@@ -48,7 +48,7 @@ forever
 		change::ast::ast-1
 		;;led.plot(0, pos)
 		;;led.plot(ast + 1, rand)
-		;;basic.pause(170)
+		;;basic.pause(160)
 		;;led.unplot(ast + 2, rand)
 		;;led.unplot(0, rand)
 	end
